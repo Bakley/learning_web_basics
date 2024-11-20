@@ -1,56 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HTML:5 CatchUp</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/x-icon" href="images/favicon.svg">
+    </head>
+    <body>
+        <header>
+            <h1>Analytics Page</h1>
+            <nav >
+                <ul class="container">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Analytics</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <!-- Card sections -->
+            <section id="analytics-cards" class="cards-container">
+                <div class="card shadowed" id="hours-card">
+                    <h2>Hours Spent</h2>
+                    <div class="progress-bar" data-value="34">
+                        <div class="progress" style="width: 34%;"></div>
+                    </div>
+                    <p><strong>34%</strong></p>
+                    <div class="div-section">
+                        <button class="modal-btn" onclick="showModal('hours-modal')">Details</button>
+                        <button class="modal-btn" onclick="showModal('hours-modal')">Details</button>
+                    </div>
 
-</head>
-<body>
-    <header>
-        <h1>Analytics Page</h1>
-        <nav >
-            <ul class="container">
-                <li>
-                    <a href="#">Home</a>
-                </li>
-                <li>
-                    <a href="#">Analytics</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="analytics-cards" class="cards-container">
-            <div class="card shadowed" id="lesson-card">
-                <h2>Lesson completed</h2>
-                <div class="progress-bar" data-value="75">
-                    <div class="progress" style="width: 75%;"></div>
-                </div>
-                <p><strong>75%</strong></p>
-                <button class="modal-btn" onclick="showModal('lesson-modal')">Details</button>
-            </div>
 
-            <div class="card shadowed" id="hours-card">
-                <h2>Hours Spent</h2>
-                <div class="progress-bar" data-value="34">
-                    <div class="progress" style="width: 34%;"></div>
                 </div>
-                <p><strong>34%</strong></p>
-                <button class="modal-btn" onclick="showModal('hours-modal')">Details</button>
-            </div>
 
-            <div class="card shadowed" id="projects-card">
-                <h2>Projects Completed</h2>
-                <div class="progress-bar" data-value="50">
-                    <div class="progress" style="width: 50%;"></div>
+                <div class="card shadowed" id="projects-card">
+                    <h2>Projects Completed</h2>
+                    <div class="progress-bar" data-value="50">
+                        <div class="progress" style="width: 50%;"></div>
+                    </div>
+                    <p><strong>50%</strong></p>
+                    <button class="modal-btn" onclick="showModal('projects-modal')">Details</button>
                 </div>
-                <p><strong>50%</strong></p>
-                <button class="modal-btn" onclick="showModal('projects-modal')">Details</button>
-            </div>
-        </section>
-    </main>
-    <footer></footer>  
-</body>
+            </section>
+
+            <!-- Modal Section -->
+             <section>
+                <div id="hours-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-btn" onclick="closeModal('hours-modal')">
+                            &times;
+                        </span>
+                        <h2>Hours Spent</h2>
+                        <p>You have spent 15 hours out of 30 scheduled hours</p>
+                        <p>You are making good progress</p>
+                    </div>
+                </div>
+
+                <div id="projects-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-btn" onclick="closeModal('hours-modal')">
+                            &times;
+                        </span>
+                        <h2>Projects Completed</h2>
+                        <p>You have spent 15 hours out of 30 scheduled hours</p>
+                        <p>You need more projects</p>
+                    </div>
+                </div>
+             </section>
+
+        </main>
+        <footer>
+            <p>&copy; 2023 Impactful Code. All rights reserved.</p>
+
+        </footer>  
+
+        <script src="app.js"></script>
+    </body>
 </html>
